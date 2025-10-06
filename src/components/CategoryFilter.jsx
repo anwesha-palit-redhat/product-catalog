@@ -1,5 +1,4 @@
-// src/components/CategoryFilter.jsx
-import React from 'react';
+
 
 const CategoryFilter = ({ 
   categories, 

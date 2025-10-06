@@ -9,21 +9,14 @@ export function useIntersectionObserver(options = {}) {
     const element = targetRef.current;
     if (!element) return;
 
-    const observer = new IntersectionObserver(([entry]) => {
+    const observer = new IntersectionObserver(([]) => {
       // Only update state when it changes to intersecting
-      if (entry.isIntersecting && !isIntersecting) {
-        setIsIntersecting(true);
-      } else if (!entry.isIntersecting && isIntersecting) {
-        setIsIntersecting(false);
-      }
     }, {
       root: null,
       rootMargin: '50px', // Load more when 50px away from viewport
       threshold: 0,
       ...options
     });
-
-    observer.observe(element);
 
     return () => {
       observer.unobserve(element);
