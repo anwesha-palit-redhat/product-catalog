@@ -2,6 +2,8 @@
 import React from 'react';
 
 const ProductCard = ({ product }) => {
+  console.log('Rendering ProductCard for:', product.product_name);
+  console.log('This is a waste of time');
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
       <div className="relative pb-[75%]"> {/* 4:3 aspect ratio */}
