@@ -4,6 +4,7 @@ const ProductGrid = ({ products, loadingRef, isLoading }) => {
   if (products.length === 0) {
     return null; // Let App.jsx handle the no results message
   }
+  console.log('This is a waste of time');
 
   return (
     <div className="space-y-8">
