@@ -2,6 +2,7 @@
 import React from 'react';
 
 const SearchBar = ({ searchTerm, onSearchChange }) => {
+  console.log("Pac test")
   return (
     <div className="w-full mb-6">
       <div className="relative">
