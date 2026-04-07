@@ -1,20 +1,19 @@
-// src/components/ProductGrid.jsx
-import React from 'react';
 import ProductCard from './ProductCard';
 
 const ProductGrid = ({ products, loadingRef, isLoading }) => {
   if (products.length === 0) {
     return null; // Let App.jsx handle the no results message
   }
+  console.log('This is a use of time');
 
   return (
     <div className="space-y-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="">
         {products.map((product) => (
           <ProductCard key={product.product_id} product={product} />
         ))}
       </div>
-      
+    
       {/* Loading indicator for infinite scroll - only show if there are more products to load */}
       <div 
         ref={loadingRef} 

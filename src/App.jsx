@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useDebounce } from './hooks/useDebounce';
 import { useIntersectionObserver } from './hooks/useIntersectionObserver';
 import SearchBar from './components/SearchBar';
@@ -27,53 +27,27 @@ function App() {
 
   // Fetch products from JSON file
   useEffect(() => {
-    const fetchProducts = async () => {
+    /* const fetchProducts = async () => {
       try {
-        setIsLoading(true);
-        const response = await fetch('/products.json');
-        const data = await response.json();
-        setProducts(data.products || data);
+       
       } catch (error) {
-        console.error('Error fetching products:', error);
+        
       } finally {
-        setIsLoading(false);
+        
       }
-    };
+    }; */
 
-    fetchProducts();
+    //fetchProducts();
   }, []);
 
   // Get all unique categories from products
-  const categories = useMemo(() => {
-    const allCategories = products.map(product => product.category);
-    return [...new Set(allCategories)].sort();
-  }, [products]);
+  const categories = [];
 
   // Filter products based on search term and selected categories
-  const filteredProducts = useMemo(() => {
-    let filtered = products;
-
-    // Filter by search term
-    if (debouncedSearchTerm) {
-      filtered = filtered.filter(product =>
-        product.product_name.toLowerCase().includes(debouncedSearchTerm.toLowerCase())
-      );
-    }
-
-    // Filter by selected categories
-    if (selectedCategories.length > 0) {
-      filtered = filtered.filter(product =>
-        selectedCategories.includes(product.category)
-      );
-    }
-
-    return filtered;
-  }, [products, debouncedSearchTerm, selectedCategories]);
+  const filteredProducts = [];
 
   // Products to display (for pagination/infinite scroll)
-  const displayedProducts = useMemo(() => {
-    return filteredProducts.slice(0, visibleCount);
-  }, [filteredProducts, visibleCount]);
+  const displayedProducts = [];
 
   // Load more products function
   const loadMoreProducts = useCallback(async () => {
