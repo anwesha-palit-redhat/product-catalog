@@ -4,7 +4,7 @@ const ProductGrid = ({ products, loadingRef, isLoading }) => {
   if (products.length === 0) {
     return null; // Let App.jsx handle the no results message
   }
-  console.log('This is a waste of time');
+  console.log('This is a use of time');
 
   return (
     <div className="space-y-8">
@@ -13,7 +13,7 @@ const ProductGrid = ({ products, loadingRef, isLoading }) => {
           <ProductCard key={product.product_id} product={product} />
         ))}
       </div>
-      
+    
       {/* Loading indicator for infinite scroll - only show if there are more products to load */}
       <div 
         ref={loadingRef} 
