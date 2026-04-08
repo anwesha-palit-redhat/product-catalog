@@ -13,7 +13,7 @@ export function useIntersectionObserver(options = {}) {
       // Only update state when it changes to intersecting
     }, {
       root: null,
-      rootMargin: '50px', // Load more when 50px away from viewport
+      rootMargin: '80px', // Load more when 50px away from viewport
       threshold: 0,
       ...options
     });
