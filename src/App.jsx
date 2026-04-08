@@ -21,7 +21,7 @@ function App() {
   
   // Use the intersection observer
   const [loadingRef, isIntersecting] = useIntersectionObserver({
-    rootMargin: '80px',
+    rootMargin: '100px',
     threshold: 0
   });
 
